@@ -1,0 +1,18 @@
+<h2>Student Management</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+  <input type="text" formControlName="name" placeholder="Name" />
+  <input type="number" formControlName="age" placeholder="Age" />
+  <input type="email" formControlName="email" placeholder="Email" />
+  <button type="submit">{{ selectedId ? 'Update' : 'Add' }}</button>
+</form>
+
+<h3>Total Students: {{ count }}</h3>
+
+<ul>
+  <li *ngFor="let s of students">
+    {{ s.name }} ({{ s.age }} yrs) - {{ s.email }}
+    <button (click)="edit(s)">Edit</button>
+    <button (click)="delete(s.id)">Delete</button>
+  </li>
+</ul>
