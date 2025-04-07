@@ -2,17 +2,15 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { RouterModule } from '@angular/router';
-
 import { AppComponent } from './app.component';
-import { StudentComponent } from './components/student/student.component';
+import { StudentListComponent } from './components/student-list/student-list.component';
+import { StudentEditComponent } from './components/student-edit/student-edit.component';
+import { RouterModule } from '@angular/router';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [AppComponent, StudentComponent],
-  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule, RouterModule.forRoot([
-    { path: '', redirectTo: 'student', pathMatch: 'full' },
-    { path: 'student', component: StudentComponent }
-  ])],
+  declarations: [AppComponent, StudentListComponent, StudentEditComponent],
+  imports: [BrowserModule, ReactiveFormsModule, HttpClientModule,RouterModule, AppRoutingModule ],
   providers: [],
   bootstrap: [AppComponent],
 })

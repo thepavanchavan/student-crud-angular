@@ -1,0 +1,7 @@
+<h2>{{ isEdit ? 'Edit' : 'Add' }} Student</h2>
+<form [formGroup]="form" (ngSubmit)="save()">
+  <label>Name: <input formControlName="name"></label><br>
+  <label>Email: <input formControlName="email"></label><br>
+  <label>Age: <input type="number" formControlName="age"></label><br>
+  <button type="submit" [disabled]="form.invalid">Save</button>
+</form>
